@@ -1,0 +1,49 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class A1 {
+    public static boolean wave(int a[], int n)
+    {
+       if(n<2)
+       {
+           return false;
+       }
+       for(int i=0; i<n-1; i++)
+       {
+           if(i%2==0)
+           {
+               if(a[i]>=a[i+1])
+               {
+                   return false;
+               }
+           }
+           else if(a[i]<=a[i+1])
+           {
+               return false;
+           }
+       }
+       return true;
+    }
+}
+class Main {
+    public static void main(String[] args)
+    {
+      Scanner scan = new Scanner(System.in);
+      System.out.print("Enter the value of n:");
+      int n = scan.nextInt();
+       int a[] = new int[n];
+         for(int i=0; i<n-1; i++)
+         {
+             a[i] = scan.nextInt();
+         }
+         boolean x = A1.wave(a,n);
+         if(x)
+         {
+             System.out.println("Not a wave array");
+         }
+         else
+         {
+             System.out.print("It's a wave array");
+         }
+    }
+}
